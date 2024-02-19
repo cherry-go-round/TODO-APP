@@ -109,13 +109,10 @@ function createTodoElement(item) {
 function displayTodos() {
     loadFromLocalStorage();
 
-    for (let i = 0; i < todos.length; i++) {
-		const item = todos[i];
-
-		const { itemEl } = createTodoElement(item);
-
-		list.append(itemEl);
-	}
+    todos.forEach(item => { 
+        const { itemEl } = createTodoElement(item);
+        list.append(itemEl);
+    });
 }
 
 displayTodos();
